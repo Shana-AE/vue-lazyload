@@ -221,15 +221,11 @@ class Lazy {
     src = getBestSelectionFromSrcset(el, this.options.scale!) || src
 
     const exist = this.ListenerQueue.find(item => item.el === el)
-    if (!exist) {
-      this.add(el, binding, vnode!)
-    } else {
-      exist.update({
+    exist && exist.update({
         src,
         loading,
         error
       })
-    }
     if (this._observer) {
       this._observer.unobserve(el)
       this._observer.observe(el)

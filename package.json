@@ -8,7 +8,8 @@
   "scripts": {
     "build": "node build",
     "lint": "eslint ./src",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "node build"
   },
   "dependencies": {},
   "repository": {
